@@ -1,3 +1,4 @@
+-- Active: 1711440366984@@127.0.0.1@3306@easy_loaf_db
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: easy_loaf_db
@@ -49,8 +50,10 @@ DROP TABLE IF EXISTS `connect`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `connect` (
+  `Relation_id` int NOT NULL AUTO_INCREMENT,  /*Add New PRIMARY KEY*/
   `Scene_id` int DEFAULT NULL,
-  `Level_id` int DEFAULT NULL
+  `Level_id` int DEFAULT NULL,
+  PRIMARY KEY(`Relation_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -71,7 +74,7 @@ DROP TABLE IF EXISTS `level`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `level` (
-  `level_id` int NOT NULL AUTO_INCREMENT,
+  `Level_id` int NOT NULL AUTO_INCREMENT,
   `Description` text,
   `Attempt_times` int DEFAULT NULL,
   `Pass_times` int DEFAULT NULL,
@@ -80,7 +83,7 @@ CREATE TABLE `level` (
   `Threshold` int DEFAULT NULL,
   `Content_pr` text,
   `Quantity_pr` text,
-  PRIMARY KEY (`level_id`)
+  PRIMARY KEY (`Level_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -126,11 +129,13 @@ DROP TABLE IF EXISTS `systeminfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `systeminfo` (
+  `SystemInfo_id` int NOT NULL AUTO_INCREMENT, /*Add a PRIMARY KEY*/
   `Level_id` int DEFAULT NULL,
   `info_type` char(30) DEFAULT NULL,
   `my_int` int DEFAULT NULL,
   `my_str` text,
   `my_bigint` bigint DEFAULT NULL
+  PRIMARY KEY (`User_Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
